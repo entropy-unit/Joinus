@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en" data-theme="dark"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ENTROPY UNIT — Ethical Cybersecurity Community</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter+Tight:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070916;--ink:#F5F7FF;--mut:#A4ABC5;--accent:#00F5D4;--accent2:#8B5CF6;--accent3:#FF5DA2;--panel:rgba(255,255,255,.07);--rim:rgba(255,255,255,.18);--serif:'Instrument Serif',Georgia,serif;--sans:'Inter Tight',system-ui,sans-serif}
+[data-theme=light]{--bg:#EEF1FB;--ink:#0B1030;--mut:#4B5373;--accent:#007F6E;--accent2:#6D3FE0;--accent3:#C2307A;--panel:rgba(255,255,255,.65);--rim:rgba(10,16,48,.16)}
+*{box-sizing:border-box}[hidden]{display:none!important}html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);font:16px/1.6 var(--sans);overflow-x:hidden;padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+background:radial-gradient(60rem 40rem at 10% -10%,color-mix(in srgb,var(--accent2) 32%,transparent),transparent),radial-gradient(45rem 35rem at 100% 15%,color-mix(in srgb,var(--accent) 16%,transparent),transparent),var(--bg)}
+#net{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+a{color:var(--accent)}h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.05;margin:0 0 .5em}
+h1{font-size:clamp(2.4rem,8vw,5.2rem);max-width:15ch}h2{font-size:clamp(1.8rem,4vw,2.8rem)}h3{font-size:1.35rem;margin-bottom:.3em}
+p{margin:0 0 1em;color:var(--mut);max-width:62ch}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.1rem}section{padding:3.5rem 0}
+.glass{background:var(--panel);border:1px solid var(--rim);border-radius:22px;padding:1.2rem;box-shadow:inset 0 1px 0 rgba(255,255,255,.16)}
+@supports (backdrop-filter:blur(1px)){.glass{backdrop-filter:blur(18px) saturate(160%);-webkit-backdrop-filter:blur(18px) saturate(160%)}}
+@supports not (backdrop-filter:blur(1px)){.glass{background:color-mix(in srgb,var(--bg) 90%,#fff)}}
+.grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}.glass p{margin:0;font-size:.95rem}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:.6rem 1.4rem;border-radius:999px;border:1px solid var(--rim);background:var(--panel);color:var(--ink);font:600 .9rem var(--sans);letter-spacing:.04em;text-decoration:none;cursor:pointer}
+.btn.p{background:var(--accent);color:#04120F;border-color:transparent}.btn:disabled{opacity:.5;cursor:not-allowed}
+:focus-visible{outline:3px solid var(--accent3);outline-offset:3px}
+.cta{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem}
+#intro{position:fixed;inset:0;z-index:50;display:grid;place-items:center;text-align:center;background:var(--bg);transition:opacity .6s,visibility .6s}
+#intro.off{opacity:0;visibility:hidden}#intro h1{max-width:none;animation:rev 1.4s cubic-bezier(.2,.7,.2,1) both}#intro p{margin:0 auto 1.5rem}
+@keyframes rev{from{letter-spacing:.5em;opacity:0;filter:blur(14px)}}
+.load{width:min(280px,70vw);height:4px;margin:0 auto 1.5rem;background:var(--rim);border-radius:9px;overflow:hidden}.load i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));animation:ld 2.2s ease forwards}@keyframes ld{to{width:100%}}
+ol.steps{padding-left:1.2rem;color:var(--mut)}ol.steps li{margin-bottom:.5rem}
+form label,.chk{display:block;margin:1rem 0 .3rem;font-weight:600}
+input,select,textarea{width:100%;min-height:48px;padding:.7rem .9rem;border-radius:14px;border:1px solid var(--rim);background:color-mix(in srgb,var(--bg) 70%,transparent);color:var(--ink);font:inherit}
+.chk{display:flex;gap:.7rem;align-items:flex-start;font-weight:400}.chk input{width:24px;min-height:24px;margin-top:.2rem;flex:none}
+.err{color:var(--accent3);font-size:.88rem;margin:.25rem 0 0;min-height:1em}
+#bar{height:100%;width:25%;background:var(--accent);transition:width .3s}.prog{height:4px;background:var(--rim);border-radius:9px;overflow:hidden;margin:.5rem 0 1.5rem}
+dl{display:grid;grid-template-columns:minmax(110px,1fr) 2fr;gap:.4rem 1rem}dt{color:var(--mut)}dd{margin:0;overflow-wrap:anywhere}
+footer{border-top:1px solid var(--rim);padding:2rem 0 3rem;color:var(--mut);font-size:.92rem}
+@media(prefers-reduced-motion:reduce){*{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+.glass{border:0;border-radius:30px;-webkit-backdrop-filter:blur(12px) saturate(1.7);backdrop-filter:blur(12px) saturate(1.7);box-shadow:inset 0 0 0 1px rgba(255,255,255,.3),inset 2px 3px 0 -2px rgba(255,255,255,.85),inset -2px -3px 0 -2px rgba(255,255,255,.6),inset 0 0 8px 6px rgba(255,255,255,.06),0 14px 40px -14px rgba(0,0,0,.6)}
+[data-theme=light] [data-lg]{background:rgba(255,255,255,.18)}
+.navwrap{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;padding:12px 14px}
+.nav{max-width:900px;margin:0 auto;display:flex;align-items:center;gap:14px;padding:8px 8px 8px 22px;border-radius:99px}
+.nav b{font:400 25px/1 var(--serif)}.nav .links{margin-left:auto;display:flex;gap:2px;align-items:center}
+.nav a{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px;padding:8px 12px;border-radius:99px}.nav a:hover{background:rgba(255,255,255,.18)}
+.btn.round{width:48px;padding:0;justify-content:center;font-size:18px;margin-left:4px}
+@media(max-width:640px){.nav .links a:not(.apply){display:none}}
+.hero{position:relative;min-height:calc(100svh - 90px);display:grid;place-items:center;overflow:clip;padding:24px 0 60px}
+.bgtext{position:absolute;inset:0;display:grid;place-content:center;text-align:center;font:800 clamp(70px,21vw,270px)/.85 var(--sans);letter-spacing:-.05em;background:linear-gradient(100deg,var(--accent2),var(--accent3) 50%,var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent;user-select:none;pointer-events:none}
+.cap{position:relative;z-index:1;width:min(640px,100%);padding:clamp(24px,5vw,52px);border-radius:clamp(36px,7vw,72px);background:color-mix(in srgb,var(--bg) 38%,transparent)}
+.cap h1{font-size:clamp(2rem,6.4vw,3.6rem);max-width:none}.cap h2{font-size:clamp(1.3rem,3vw,1.8rem)}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){.glass{background:color-mix(in srgb,var(--bg) 90%,#fff)}}
+</style></head><body>
+<canvas id="net" aria-hidden="true"></canvas>
+<svg id="defs" aria-hidden="true" width="0" height="0" style="position:absolute"></svg>
+<div id="intro"><div><h1>ENTROPY UNIT</h1><p>SECURE KNOWLEDGE. RESPONSIBLE ACTION.</p><div class="load"><i></i></div><button class="btn" id="skip" type="button">Skip intro</button></div></div>
+<div class="navwrap"><header class="nav glass" data-lg data-s="34" data-ab="7"><b>ENTROPY UNIT</b><div class="links"><a href="#divisions">Divisions</a><a href="#leadership">Leadership</a><a href="#contact">Contact</a><a class="apply" href="#apply">Apply</a><button class="btn round" id="theme" type="button" aria-label="Switch light or dark theme">◐</button></div></header></div>
+
+<main id="home" class="wrap">
+<section class="hero"><div class="bgtext" aria-hidden="true"><span>ENTROPY</span><span>UNIT</span></div><div class="cap glass" data-lg data-s="60" data-ab="12" data-f="4"><h1>JOIN THE NEXT GENERATION OF CYBERSECURITY</h1><h2 style="color:var(--accent)">Learn. Research. Defend. Collaborate.</h2>
+<p>ENTROPY UNIT brings together cybersecurity enthusiasts and skilled professionals who value responsible research, technical excellence, and ethical security practices. Beginners and experienced practitioners are welcome. Joining depends on application review, ethical conduct, and a skill assessment.</p>
+<div class="cta"><a class="btn p" href="#apply">APPLY FOR MEMBERSHIP</a><a class="btn" href="#divisions">EXPLORE OUR COMMUNITY</a></div></div></section>
+<section id="process"><h2>How admission works</h2><ol class="steps"><li>Submit the application form.</li><li>Verify your email with a six-digit code.</li><li>Take the skill assessment (opens in a later release).</li><li>Wait for manual review. Passing does not guarantee membership.</li></ol></section>
+<section id="divisions"><h2>Cybersecurity divisions</h2><p>Pick the division you prefer on the form. It is a preference, not a guaranteed placement.</p><div class="grid" id="divs"></div>
+<div class="glass" style="margin-top:1rem"><h3>Authorized testing only</h3><p>Red Team activity happens only in owned infrastructure or explicitly permitted environments. Membership gives no legal authorization to access anyone else's systems.</p></div></section>
+<section id="leadership"><h2>Leadership</h2><div class="grid">
+<article class="glass"><h3>CyberXcode</h3><p><b>Cybersecurity Trainer.</b> Information Technology, OSINT, cybersecurity education, and practical security awareness.</p></article>
+<article class="glass"><h3>B.C.U. — Black Code Union</h3><p><b>Team Leader &amp; Management.</b> Community management, coordination, and organizational development.</p></article>
+<article class="glass"><h3>Mr. Rahim</h3><p><b>Team Leader 2 — White Hat.</b> Ethical cybersecurity, team coordination, and responsible security practices.</p></article></div></section>
+<section id="contact"><h2>Contact</h2><div class="cta" style="margin-top:0"><a class="btn p" href="https://wa.me/919523679444">CONTACT US ON WHATSAPP</a><a class="btn" href="https://www.instagram.com/entropy_unit/">FOLLOW US ON INSTAGRAM</a><a class="btn" href="mailto:entropy.unit.redteamming@gmail.com">SEND US AN EMAIL</a></div></section>
+</main>
+
+<main id="apply" class="wrap" hidden><section class="glass" style="margin-top:2rem"><h2>Membership application</h2><p id="prog" aria-live="polite"></p><div class="prog"><div id="bar"></div></div><div id="form"></div></section></main>
+
+<footer><div class="wrap"><b>ENTROPY UNIT</b> — Knowledge. Ethics. Security.<br>Cybersecurity Education &amp; Ethical Research Community.<br>Cybersecurity Trainer: CyberXcode · Team Leader &amp; Management: B.C.U. — Black Code Union · Team Leader 2: Mr. Rahim — White Hat<br>
+<a href="https://www.instagram.com/entropy_unit/">Instagram</a> · <a href="https://wa.me/919523679444">WhatsApp</a> · <a href="mailto:entropy.unit.redteamming@gmail.com">entropy.unit.redteamming@gmail.com</a><br><small>Full glass refraction needs a Chromium browser (Chrome, Edge, Brave). Other browsers show a frosted blur with the same layout.</small></div></footer>
+
+<script>
+const $=s=>document.querySelector(s),el=(t,a={},...c)=>{const e=document.createElement(t);for(const k in a)k=='class'?e.className=a[k]:e.setAttribute(k,a[k]);e.append(...c);return e};
+const DIV=[["Red Team & Authorized Penetration Testing","Attack simulation in owned or permitted labs."],["Blue Team & Security Monitoring","Defend systems and watch for threats."],["Purple Team & Security Collaboration","Red and blue working together."],["SOC & Threat Detection","Triage alerts and tune detections."],["OSINT & Threat Intelligence","Lawful research from public sources."],["DFIR & Digital Forensics","Investigate incidents and preserve evidence."],["Cloud Security","Secure cloud accounts and workloads."],["Application Security","Find and fix flaws in software."],["Network Security","Protect and monitor network traffic."],["Security Research","Study vulnerabilities and disclose them responsibly."],["AI Security & Automation","Secure AI systems; automate defense."],["Security Awareness & Education","Teach safer habits."],["CTF & Practical Labs","Hands-on challenges and practice."],["Governance, Risk & Compliance","Policy, risk, and audit skills."],["Community Management","Support members and events."],["Beginner Learning Division","Start from the fundamentals."],["Advanced Research Division","Deep work for experienced members."]];
+$('#divs').append(...DIV.map(([n,d])=>el('article',{class:'glass'},el('h3',{},n),el('p',{},d))));
+const off=()=>$('#intro').classList.add('off');setTimeout(off,2400);$('#skip').onclick=off;
+$('#theme').onclick=()=>{const r=document.documentElement;r.dataset.theme=r.dataset.theme=='dark'?'light':'dark'};
+(()=>{const c=$('#net'),x=c.getContext('2d'),rm=matchMedia('(prefers-reduced-motion:reduce)').matches;let w,h,P=[];
+const size=()=>{w=c.width=innerWidth;h=c.height=innerHeight;P=Array.from({length:w<700?22:46},()=>({x:Math.random()*w,y:Math.random()*h,vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3}))};
+const draw=()=>{x.clearRect(0,0,w,h);for(const p of P){if(!rm){p.x=(p.x+p.vx+w)%w;p.y=(p.y+p.vy+h)%h}x.fillStyle='rgba(0,245,212,.6)';x.fillRect(p.x,p.y,2,2)}
+for(let i=0;i<P.length;i++)for(let j=i+1;j<P.length;j++){const d=Math.hypot(P[i].x-P[j].x,P[i].y-P[j].y);if(d<120){x.strokeStyle=`rgba(139,92,246,${.35*(1-d/120)})`;x.beginPath();x.moveTo(P[i].x,P[i].y);x.lineTo(P[j].x,P[j].y);x.stroke()}}
+if(!rm)requestAnimationFrame(draw)};addEventListener('resize',size);size();draw()})();
+
+const F=[[['name','Full name','text',1],['email','Email address','email',1],['country','Country','text',1],['tz','Time zone','text',1],['lang','Preferred language','text',1],['contact','Preferred contact method',['Email','WhatsApp','Instagram'],1]],
+[['division','Preferred division',DIV.map(d=>d[0]),1],['level','Experience level',['Beginner','Intermediate','Advanced','Professional'],1],['years','Years of experience (optional)','number'],['interests','Areas of interest','text',1],['skills','Skills','text',1],['tools','Tools and technologies known (optional)','text'],['certs','Certifications (optional)','text'],['github','GitHub profile (optional)','url'],['portfolio','Portfolio URL (optional)','url'],['ctf','Previous CTF experience (optional)','text'],['avail','Availability','text',1],['why','Motivation for joining','textarea',1]],[]];
+const CHK=[[['age','I confirm I am 18 or older.']],[],[['c1','I will only test systems I own or have explicit permission to assess.'],['c2','I will respect privacy and confidentiality.'],['c3','I will not distribute malware, stolen credentials, or unlawfully obtained information.'],['c4','I will follow applicable laws and community policies.'],['c5','I understand that membership requires approval.'],['c6','I understand that submitting an application does not guarantee admission.'],['c7','I agree to the ENTROPY UNIT privacy policy (policy version recorded on submission).']]];
+let step=0,S={},ap=null,built=0;
+const route=()=>{const a=location.hash=='#apply';$('#home').hidden=a;$('#apply').hidden=!a;if(a){scrollTo(0,0);if(!built){built=1;show(0)}}};
+addEventListener('hashchange',route);route();
+const api=async(p,b)=>{try{const r=await fetch('/api'+p,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(b)});return{ok:r.ok,...await r.json().catch(()=>({}))}}catch{return{ok:false,net:true,error:'Cannot reach the server. Check your connection and try again.'}}};
+const head=(t,n)=>{$('#prog').textContent=t;$('#bar').style.width=n+'%'};
+
+function show(n){step=n;const box=$('#form');box.replaceChildren();if(n==3)return review(box);
+head(['Step 1 of 4: Personal information','Step 2 of 4: Cybersecurity profile','Step 3 of 4: Ethics and responsibility'][n],(n+1)*25);
+const f=el('form',{novalidate:''});
+for(const [k,l,t,r] of F[n]){const e=el('p',{class:'err',id:k+'-e',role:'alert'});
+ const i=Array.isArray(t)?el('select',{id:k,name:k},el('option',{value:''},'Select one'),...t.map(o=>el('option',{value:o},o))):t=='textarea'?el('textarea',{id:k,name:k,rows:4,maxlength:2000}):el('input',{id:k,name:k,type:t,maxlength:500});
+ i.setAttribute('aria-describedby',k+'-e');if(r)i.required=true;i.value=S[k]||(k=='tz'?Intl.DateTimeFormat().resolvedOptions().timeZone:'');f.append(el('label',{for:k},l),i,e)}
+for(const [k,l] of CHK[n]){const i=el('input',{type:'checkbox',id:k,name:k});i.checked=!!S[k];f.append(el('label',{class:'chk',for:k},i,l),el('p',{class:'err',id:k+'-e',role:'alert'}))}
+const nx=el('button',{class:'btn p',type:'submit'},n==2?'Review application':'Continue'),bk=el('button',{class:'btn',type:'button'},'Back');bk.onclick=()=>show(n-1);bk.hidden=!n;
+f.append(el('div',{class:'cta'},bk,nx));
+f.onsubmit=ev=>{ev.preventDefault();let bad=0;
+ for(const [k,l,t,r] of F[n]){const v=f.elements[k].value.trim();S[k]=v;let m='';
+  if(r&&!v)m=l+' is required.';else if(v&&k=='email'&&!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v))m='Enter a valid email address.';else if(v&&t=='url'&&!/^https?:\/\/\S+$/.test(v))m='Start the link with http:// or https://.';
+  $('#'+k+'-e').textContent=m;if(m)bad++}
+ for(const [k] of CHK[n]){S[k]=f.elements[k].checked;const m=S[k]?'':'Confirm to continue.';$('#'+k+'-e').textContent=m;if(m)bad++}
+ if(bad)f.querySelector('.err:not(:empty)')?.previousElementSibling.focus?.();else show(n+1)};
+box.append(f);f.querySelector('input,select')?.focus()}
+
+function review(box){head('Step 4 of 4: Review and submit',100);const dl=el('dl');
+for(const [k,l] of [...F[0],...F[1]])if(S[k])dl.append(el('dt',{},l.replace(' (optional)','')),el('dd',{},S[k]));
+const msg=el('p',{class:'err',role:'alert'}),bk=el('button',{class:'btn',type:'button'},'Back'),go=el('button',{class:'btn p',type:'button'},'Submit application');bk.onclick=()=>show(2);
+go.onclick=async()=>{go.disabled=true;go.textContent='Submitting…';msg.textContent='';const r=await api('/applications',S);
+ if(r.ok){ap={id:r.id,token:r.token};otp()}else if(r.net){offline()}else{msg.textContent=r.error||'Submission failed.';go.disabled=false;go.textContent='Submit application'}};
+box.append(dl,msg,el('div',{class:'cta'},bk,go))}
+
+function otp(){const box=$('#form');box.replaceChildren();head('Verify your email',100);
+const msg=el('p',{role:'status'}),err=el('p',{class:'err',role:'alert'}),code=el('input',{id:'code',inputmode:'numeric',autocomplete:'one-time-code',maxlength:'6','aria-label':'Six-digit code'}),vb=el('button',{class:'btn p',type:'button'},'Verify email'),rs=el('button',{class:'btn',type:'button'},'Resend code');
+box.append(el('p',{},'Application ID: ',el('b',{},ap.id)),el('p',{},'We are emailing a six-digit code to ',el('b',{},S.email),'. It expires in five minutes.'),msg,code,err,el('div',{class:'cta'},vb,rs));
+let t;const cool=s=>{clearInterval(t);rs.disabled=true;t=setInterval(()=>{rs.textContent=s>0?`Resend in ${s--}s`:'Resend code';if(s<0){clearInterval(t);rs.disabled=false}},1000)};
+const send=async()=>{err.textContent='';msg.textContent='Sending…';rs.disabled=true;const r=await api('/email/send-otp',{applicationId:ap.id,token:ap.token});
+ if(r.ok){msg.textContent='Code sent. Check your inbox and spam folder.';cool(60)}else{msg.textContent='';err.textContent=r.error||'The code could not be sent.';if(r.retryAfter)cool(Math.min(r.retryAfter,60));else rs.disabled=false}};
+rs.onclick=send;vb.onclick=async()=>{err.textContent='';vb.disabled=true;const r=await api('/email/verify-otp',{applicationId:ap.id,token:ap.token,otp:code.value.trim()});vb.disabled=false;r.ok?done():err.textContent=r.error||'Verification failed.'};
+send();code.focus()}
+
+function done(){const box=$('#form');box.replaceChildren();head('Email verified',100);
+const t=`Hello ENTROPY UNIT! 🌐\n\nI have submitted my membership application.\n\n📌 Application ID: ${ap.id}\n👤 Name: ${S.name}\n🌍 Country: ${S.country}\n🛡️ Preferred Division: ${S.division}\n\nPlease review my application.\n\nRegards,\n${S.name}`;
+box.append(el('h3',{},'Application received'),el('p',{},'Your application ID is ',el('b',{},ap.id),'. Your email is verified and your application is saved. The assessment will open here in a later release; passing it does not guarantee membership.'),
+el('p',{},'Optional: open WhatsApp with a prefilled message to ENTROPY UNIT. You must press send yourself; nothing is sent automatically.'),
+el('div',{class:'cta'},el('a',{class:'btn p',href:'https://wa.me/919523679444?text='+encodeURIComponent(t)},'Notify ENTROPY UNIT on WhatsApp'),el('a',{class:'btn',href:'#'},'Skip and return home')))}
+
+(()=>{const NS='http://www.w3.org/2000/svg',defs=$('#defs'),cl=(v,a,b)=>Math.min(b,Math.max(a,v)),nm=(v,d)=>v==null?d:+v;
+if(!/Chrome\//.test(navigator.userAgent))return;
+const url=(w,h,r,b)=>'data:image/svg+xml,'+encodeURIComponent(`<svg xmlns="${NS}" viewBox="0 0 ${w} ${h}"><defs><linearGradient id="r" x1="100%" y1="0" x2="0" y2="0"><stop offset="0" stop-color="red" stop-opacity="0"/><stop offset="1" stop-color="red"/></linearGradient><linearGradient id="b" x1="0" y1="0" x2="0" y2="100%"><stop offset="0" stop-color="blue" stop-opacity="0"/><stop offset="1" stop-color="blue"/></linearGradient></defs><rect width="${w}" height="${h}" fill="#000"/><rect width="${w}" height="${h}" rx="${r}" fill="url(#r)"/><rect width="${w}" height="${h}" rx="${r}" fill="url(#b)" style="mix-blend-mode:difference"/><rect x="${b}" y="${b}" width="${w-2*b}" height="${h-2*b}" rx="${r}" fill="#808080" fill-opacity=".93" style="filter:blur(${b*.6}px)"/></svg>`);
+const build=e=>{const f=e._f,w=e.offsetWidth,h=e.offsetHeight;if(!w||!h)return;const d=e.dataset,s=nm(d.s,50),ab=nm(d.ab,10),fr=nm(d.f,2);
+const r=Math.min(parseFloat(getComputedStyle(e).borderTopLeftRadius)||0,w/2,h/2),b=Math.round(cl(Math.min(w,h)*.2,8,28));
+const ch=i=>{const m=Array(20).fill(0);m[i*6]=1;m[18]=1;return m.join(' ')};
+const dm=(k,i)=>`<feDisplacementMap in="SourceGraphic" in2="m" scale="${-(s+k)}" xChannelSelector="R" yChannelSelector="B"/><feColorMatrix type="matrix" values="${ch(i)}" result="c${i}"/>`;
+f.setAttribute('width',w);f.setAttribute('height',h);
+f.innerHTML=`<feImage href="${url(w,h,r,b)}" x="0" y="0" width="${w}" height="${h}" result="m"/>`+dm(ab,0)+dm(0,1)+dm(-ab,2)+`<feBlend in="c0" in2="c1" mode="screen" result="rg"/><feBlend in="rg" in2="c2" mode="screen"/><feGaussianBlur stdDeviation=".4"/>`;
+e.style.backdropFilter=`url(#${f.id}) blur(${fr}px) saturate(1.8) brightness(1.08)`};
+const q=new Set();let raf=0,u=0;
+const ro=new ResizeObserver(es=>{es.forEach(x=>q.add(x.target));raf||(raf=requestAnimationFrame(()=>{q.forEach(build);q.clear();raf=0}))});
+document.querySelectorAll('[data-lg]').forEach(e=>{const f=document.createElementNS(NS,'filter');f.id='lg'+u++;f.setAttribute('filterUnits','userSpaceOnUse');f.setAttribute('color-interpolation-filters','sRGB');f.setAttribute('x',0);f.setAttribute('y',0);defs.append(f);e._f=f;ro.observe(e)})})();
+
+function offline(){const box=$('#form');box.replaceChildren();head('Send your application by message',100);
+const L=[['Name',S.name],['Email (not verified)',S.email],['Country',S.country],['Time zone',S.tz],['Language',S.lang],['Preferred contact',S.contact],['Division',S.division],['Experience level',S.level],['Years',S.years],['Interests',S.interests],['Skills',S.skills],['Tools',S.tools],['Certifications',S.certs],['GitHub',S.github],['Portfolio',S.portfolio],['CTF',S.ctf],['Availability',S.avail],['Motivation',S.why]].filter(x=>x[1]);
+const body=n=>'Hello ENTROPY UNIT! 🌐\n\nI want to join. Here is my membership application:\n\n'+L.map(([k,v])=>`${k}: ${n&&v.length>n?v.slice(0,n)+'…':v}`).join('\n')+'\n\nI confirm the ethics and responsibility statements.\n\nRegards,\n'+S.name;
+const note=el('p',{role:'status'}),cp=el('button',{class:'btn',type:'button'},'Copy application text'),rt=el('button',{class:'btn',type:'button'},'Try again');
+cp.onclick=async()=>{try{await navigator.clipboard.writeText(body(0));note.textContent='Copied. Paste it into any chat or email to ENTROPY UNIT.'}catch{note.textContent='Copy failed. Use one of the buttons above.'}};rt.onclick=()=>show(3);
+box.append(el('h3',{},'We could not reach the server'),el('p',{},'Your application is not saved yet, and your email is not verified. You can still tell ENTROPY UNIT you want to join: the buttons below open WhatsApp or your email app with your application already written. You must press send yourself; nothing is sent automatically.'),
+el('div',{class:'cta'},el('a',{class:'btn p',href:'https://wa.me/919523679444?text='+encodeURIComponent(body(200))},'Send on WhatsApp'),el('a',{class:'btn',href:'mailto:entropy.unit.redteamming@gmail.com?subject='+encodeURIComponent('Membership application — '+S.name)+'&body='+encodeURIComponent(body(0))},'Send by email'),cp,rt),note)}
+</script></body></html>
